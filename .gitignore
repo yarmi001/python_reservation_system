@@ -1,0 +1,21 @@
+# Виртуальное окружение
+venv/
+env/
+
+# Кэш Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Переменные окружения (секреты)
+.env
+
+# Файлы IDE (VS Code, PyCharm)
+.vscode/
+.idea/
+
+# Базы данных SQLite (если будем использовать для тестов)
+*.sqlite3
+
+# Логи
+*.log

@@ -1,0 +1,24 @@
+# --- Web & API ---
+fastapi
+uvicorn[standard]
+pydantic
+pydantic-settings
+
+# --- Database & ORM ---
+sqlalchemy
+asyncpg
+alembic
+
+# --- Security (Identity) ---
+pyjwt
+bcrypt
+
+# --- Messaging & Cache ---
+faststream[rabbit]
+redis
+
+# --- Tools & Testing ---
+pytest
+pytest-asyncio
+httpx
+ruff
