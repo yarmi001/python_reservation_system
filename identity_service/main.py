@@ -11,6 +11,7 @@ from identity_service.schemas import UserCreate, UserResponse, Token
 from identity_service.security import get_password_hash, verify_password, create_access_token
 from identity_service.database import get_db, engine, async_session_maker
 from identity_service.dependencies import get_current_user
+from fastapi.middleware.cors import CORSMiddleware
 
 logger = logging.getLogger("uvicorn")
 
@@ -40,6 +41,14 @@ app = FastAPI(
     lifespan=lifespan,
     docs_url="/api/docs",
     redoc_url=None,
+)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"], # В Production тут будут конкретные домены, например ["http://localhost:8002", "https://myfrontend.com"]
+    allow_credentials=True,
+    allow_methods=["*"], # Разрешаем любые методы (GET, POST, OPTIONS и т.д.)
+    allow_headers=["*"], # Разрешаем любые заголовки
 )
 
 @app.get("/health/liveness", tags=["Monitoring"], status_code=status.HTTP_200_OK)
