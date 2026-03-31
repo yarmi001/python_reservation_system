@@ -39,7 +39,7 @@ services:
       RABBITMQ_DEFAULT_USER: rmq_admin
       RABBITMQ_DEFAULT_PASS: rmq_password
     ports:
-      - "5672:5672"   # Порт для подключения сервисов
+      - "5673:5672"   # Порт для подключения сервисов
       - "15672:15672" # Порт для веб-интерфейса управления
     volumes:
       - rabbitmq_data:/var/lib/rabbitmq
